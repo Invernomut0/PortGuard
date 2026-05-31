@@ -8,7 +8,7 @@ final class LicenseManager {
     private(set) var activationError: String? = nil
     var isValidating: Bool = false
 
-    private let gumroadProductPermalink = "portguard"
+    private let gumroadProductPermalink = "portguard" // ← sostituisci con il tuo permalink reale
     private let keychainKey = "com.portguard.app.licenseKey"
 
     init() {
