@@ -14,10 +14,9 @@ public final class DataStore {
     public init() {}
 
     public var filteredConnections: [ConnectionRecord] {
-        let base = showAllPorts ? connections : connections.filter { $0.localPort <= 1024 }
-        guard !searchQuery.isEmpty else { return base }
+        guard !searchQuery.isEmpty else { return connections }
         let q = searchQuery.lowercased()
-        return base.filter {
+        return connections.filter {
             $0.processName.lowercased().contains(q) ||
             String($0.localPort).contains(q) ||
             ($0.remoteHost?.lowercased().contains(q) ?? false)

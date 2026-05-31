@@ -63,7 +63,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             nil
         )
         let hotKeyID = EventHotKeyID(signature: OSType(0x5047_5244), id: 1)
-        var mutableID = hotKeyID
+        let mutableID = hotKeyID
         RegisterEventHotKey(
             UInt32(kVK_ANSI_P),
             UInt32(optionKey | cmdKey),
