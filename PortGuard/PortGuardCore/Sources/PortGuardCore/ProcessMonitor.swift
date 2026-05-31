@@ -16,7 +16,7 @@ public final class ProcessMonitor {
         let launchObs = ws.addObserver(
             forName: NSWorkspace.didLaunchApplicationNotification,
             object: nil, queue: .main
-        ) { [weak self] note in
+        ) { @MainActor [weak self] note in
             guard let app = note.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication else { return }
             let record = ProcessRecord(
                 pid: Int(app.processIdentifier),
@@ -29,7 +29,7 @@ public final class ProcessMonitor {
         let terminateObs = ws.addObserver(
             forName: NSWorkspace.didTerminateApplicationNotification,
             object: nil, queue: .main
-        ) { [weak self] note in
+        ) { @MainActor [weak self] note in
             guard let app = note.userInfo?[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication else { return }
             let record = ProcessRecord(
                 pid: Int(app.processIdentifier),

@@ -19,7 +19,15 @@ public enum LsofParser {
 
             guard typeField == "IPv4" || typeField == "IPv6" else { continue }
 
-            let proto: ConnectionProtocol = typeField == "IPv6" ? .tcp6 : .tcp
+            let protocolField = parts.count > 7 ? String(parts[7]) : "TCP"
+            let proto: ConnectionProtocol
+            switch protocolField {
+            case "TCP": proto = .tcp
+            case "UDP": proto = .udp
+            case "TCP6": proto = .tcp6
+            case "UDP6": proto = .udp6
+            default: proto = .tcp
+            }
             let state = parseState(nameField)
             let (localPort, remoteHost, remotePort) = parseAddress(addressField)
 
@@ -117,16 +125,20 @@ public final class LsofPoller {
     }
 
     private func poll() {
-        let output = runLsof()
-        let current = LsofParser.parse(output: output)
-        let diff = LsofDiffEngine.diff(previous: previous, current: current)
-        previous = current
-        if !diff.isEmpty {
-            onDiff?(diff)
+        Task {
+            let output = await Task.detached(priority: .utility) {
+                self.runLsof()
+            }.value
+            let current = LsofParser.parse(output: output)
+            let diff = LsofDiffEngine.diff(previous: self.previous, current: current)
+            self.previous = current
+            if !diff.isEmpty {
+                self.onDiff?(diff)
+            }
         }
     }
 
-    private func runLsof() -> String {
+    private nonisolated func runLsof() -> String {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/sbin/lsof")
         process.arguments = ["-i", "-n", "-P"]
