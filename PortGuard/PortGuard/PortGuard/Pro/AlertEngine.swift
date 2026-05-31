@@ -46,7 +46,7 @@ final class AlertEngine {
         case .processConnected:
             diff.added
                 .filter { conn in rule.processFilter.map { conn.processName.contains($0) } ?? true }
-                .forEach { fire(rule: rule, connection: $0, verb: "made a connection") }
+                .forEach { conn in fire(rule: rule, connection: conn, verb: "made a connection") }
         }
     }
 
