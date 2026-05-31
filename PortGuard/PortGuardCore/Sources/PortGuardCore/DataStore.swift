@@ -9,6 +9,8 @@ public final class DataStore {
     public private(set) var listenPorts: [PortRecord] = []
     public var searchQuery: String = ""
 
+    public init() {}
+
     public var filteredConnections: [ConnectionRecord] {
         guard !searchQuery.isEmpty else { return connections }
         let q = searchQuery.lowercased()
