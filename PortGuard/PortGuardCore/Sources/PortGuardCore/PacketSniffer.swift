@@ -36,6 +36,10 @@ public final class PacketSniffer {
 
     public init() {}
 
+    public func clearPackets() {
+        packets = []
+    }
+
     public func start() {
         guard !ports.isEmpty else { return }
         packets = []

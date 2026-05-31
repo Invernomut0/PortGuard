@@ -41,7 +41,7 @@ struct SnifferView: View {
                     .toggleStyle(.checkbox)
                     .font(.caption)
                 Button {
-                    sniffer.packets.removeAll()
+                    sniffer.clearPackets()
                 } label: {
                     Image(systemName: "trash")
                 }
