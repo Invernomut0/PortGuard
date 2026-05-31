@@ -8,7 +8,11 @@ struct ProcessesTabView: View {
     var body: some View {
         List {
             ForEach(dataStore.processSummaries) { summary in
-                ProcessRowView(summary: summary, isExpanded: expandedPID == summary.pid) {
+                ProcessRowView(
+                    summary: summary,
+                    isExpanded: expandedPID == summary.pid,
+                    isPro: dataStore.showAllPorts
+                ) {
                     expandedPID = expandedPID == summary.pid ? nil : summary.pid
                 }
             }
@@ -20,7 +24,10 @@ struct ProcessesTabView: View {
 struct ProcessRowView: View {
     let summary: ProcessSummary
     let isExpanded: Bool
+    let isPro: Bool
     let onTap: () -> Void
+
+    @State private var showingKillConfirm = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -41,6 +48,27 @@ struct ProcessRowView: View {
                         .padding(.horizontal, 6)
                         .padding(.vertical, 2)
                         .background(.blue, in: Capsule())
+                    if isPro {
+                        Button {
+                            showingKillConfirm = true
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundStyle(.red.opacity(0.8))
+                        }
+                        .buttonStyle(.plain)
+                        .help("Termina processo")
+                        .confirmationDialog(
+                            "Terminare \(summary.name) (PID \(summary.pid))?",
+                            isPresented: $showingKillConfirm,
+                            titleVisibility: .visible
+                        ) {
+                            Button("Termina", role: .destructive) {
+                                kill(pid: summary.pid)
+                            }
+                        } message: {
+                            Text("Il processo verrà chiuso immediatamente.")
+                        }
+                    }
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                         .font(.caption)
                         .foregroundStyle(.secondary)
@@ -55,6 +83,10 @@ struct ProcessRowView: View {
                 }
             }
         }
+    }
+
+    private func kill(pid: Int) {
+        Foundation.kill(pid_t(pid), SIGTERM)
     }
 }
 

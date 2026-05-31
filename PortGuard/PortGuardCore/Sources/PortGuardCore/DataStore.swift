@@ -8,13 +8,16 @@ public final class DataStore {
     public private(set) var connections: [ConnectionRecord] = []
     public private(set) var listenPorts: [PortRecord] = []
     public var searchQuery: String = ""
+    /// Quando false (free) mostra solo porte ≤1024; impostare a true per utenti Pro.
+    public var showAllPorts: Bool = false
 
     public init() {}
 
     public var filteredConnections: [ConnectionRecord] {
-        guard !searchQuery.isEmpty else { return connections }
+        let base = showAllPorts ? connections : connections.filter { $0.localPort <= 1024 }
+        guard !searchQuery.isEmpty else { return base }
         let q = searchQuery.lowercased()
-        return connections.filter {
+        return base.filter {
             $0.processName.lowercased().contains(q) ||
             String($0.localPort).contains(q) ||
             ($0.remoteHost?.lowercased().contains(q) ?? false)
@@ -22,12 +25,18 @@ public final class DataStore {
     }
 
     public var filteredListenPorts: [PortRecord] {
-        guard !searchQuery.isEmpty else { return listenPorts }
+        let base = showAllPorts ? listenPorts : listenPorts.filter { $0.port <= 1024 }
+        guard !searchQuery.isEmpty else { return base }
         let q = searchQuery.lowercased()
-        return listenPorts.filter {
+        return base.filter {
             $0.processName.lowercased().contains(q) ||
             String($0.port).contains(q)
         }
+    }
+
+    public var hiddenHighPortsCount: Int {
+        guard !showAllPorts else { return 0 }
+        return listenPorts.filter { $0.port > 1024 }.count
     }
 
     public var outboundConnections: [ConnectionRecord] {

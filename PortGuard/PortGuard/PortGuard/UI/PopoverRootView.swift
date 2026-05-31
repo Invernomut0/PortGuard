@@ -95,5 +95,7 @@ struct PopoverRootView: View {
             .padding(.vertical, 8)
         }
         .frame(width: 400, height: 520)
+        .task { dataStore.showAllPorts = licenseManager.isPro }
+        .onChange(of: licenseManager.isPro) { dataStore.showAllPorts = licenseManager.isPro }
     }
 }
