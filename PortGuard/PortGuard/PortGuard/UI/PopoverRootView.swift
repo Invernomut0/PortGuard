@@ -92,9 +92,6 @@ struct PopoverRootView: View {
                     Image(systemName: "gearshape")
                 }
                 .buttonStyle(.plain)
-            }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
         }
         .frame(width: 400, height: 520)
     }
