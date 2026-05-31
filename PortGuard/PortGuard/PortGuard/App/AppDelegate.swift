@@ -3,6 +3,7 @@ import SwiftUI
 import PortGuardCore
 import Carbon
 
+@MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     let dataStore = DataStore()
     let licenseManager = LicenseManager()
@@ -61,18 +62,18 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             Unmanaged.passUnretained(self).toOpaque(),
             nil
         )
-        var hotKeyID = EventHotKeyID(signature: OSType(0x5047_5244), id: 1)
+        let hotKeyID = EventHotKeyID(signature: OSType(0x5047_5244), id: 1)
+        var mutableID = hotKeyID
         RegisterEventHotKey(
             UInt32(kVK_ANSI_P),
             UInt32(optionKey | cmdKey),
-            hotKeyID,
+            mutableID,
             GetApplicationEventTarget(),
             0,
             &hotKeyRef
         )
     }
 
-    @MainActor
     func showQuickLookup() {
         if let win = quickLookupWindow, win.isVisible {
             win.orderOut(nil)
