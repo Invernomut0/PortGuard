@@ -86,9 +86,7 @@ struct PopoverRootView: View {
                     .buttonStyle(.plain)
                     .help("Export")
                 }
-                Button {
-                    NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
-                } label: {
+                SettingsLink {
                     Image(systemName: "gearshape")
                 }
                 .buttonStyle(.plain)

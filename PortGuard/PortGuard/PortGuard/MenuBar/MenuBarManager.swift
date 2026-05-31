@@ -62,6 +62,10 @@ final class MenuBarManager {
 
     @objc private func openSettings() {
         NSApp.activate(ignoringOtherApps: true)
+        for window in NSApp.windows where window.identifier?.rawValue == "com_apple_SwiftUI_Settings_window" {
+            window.makeKeyAndOrderFront(nil)
+            return
+        }
         NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
     }
 

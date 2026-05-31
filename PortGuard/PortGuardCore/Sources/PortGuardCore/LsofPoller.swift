@@ -11,7 +11,7 @@ public enum LsofParser {
             let parts = line.split(separator: " ", omittingEmptySubsequences: true)
             guard parts.count >= 9 else { continue }
 
-            let command = String(parts[0])
+            let command = String(parts[0]).replacingOccurrences(of: "\\x20", with: " ")
             guard let pid = Int(parts[1]) else { continue }
             let nameField = String(parts[parts.count - 1])
             let addressField = String(parts[parts.count - 2])
@@ -141,7 +141,7 @@ public final class LsofPoller {
     private nonisolated func runLsof() -> String {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/sbin/lsof")
-        process.arguments = ["-i", "-n", "-P"]
+        process.arguments = ["+c", "0", "-i", "-n", "-P"]
         let pipe = Pipe()
         process.standardOutput = pipe
         process.standardError = Pipe()
