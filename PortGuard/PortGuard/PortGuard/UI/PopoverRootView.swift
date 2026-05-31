@@ -3,7 +3,6 @@ import PortGuardCore
 
 struct PopoverRootView: View {
     @Environment(DataStore.self) var dataStore
-    @Environment(\.openSettings) private var openSettings
     @State var licenseManager: LicenseManager
     @State var exportManager: ExportManager
     @State var alertEngine: AlertEngine
@@ -88,11 +87,13 @@ struct PopoverRootView: View {
                     .buttonStyle(.plain)
                     .help("Export")
                 }
-                Button {
-                    openSettings()
-                } label: {
+                // SettingsLink richiede che l'app sia attiva per instradare il comando alla Settings scene
+                SettingsLink {
                     Image(systemName: "gearshape")
                 }
+                .simultaneousGesture(TapGesture().onEnded {
+                    NSApp.activate(ignoringOtherApps: true)
+                })
                 .buttonStyle(.plain)
                 .help("Settings")
             }
