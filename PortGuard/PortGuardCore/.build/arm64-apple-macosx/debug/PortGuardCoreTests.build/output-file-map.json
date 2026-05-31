@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/primary.swiftdeps"
+  },
+  "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/Tests/PortGuardCoreTests/ModelsTests.swift": {
+    "dependencies": "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/ModelsTests.d",
+    "object": "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/ModelsTests.swift.o",
+    "swiftmodule": "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/ModelsTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/ModelsTests.swiftdeps",
+    "diagnostics": "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/ModelsTests.dia"
+  }
+}

@@ -1,0 +1,3 @@
+module PortGuardCore {
+    header "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/include/PortGuardCore-Swift.h"
+}

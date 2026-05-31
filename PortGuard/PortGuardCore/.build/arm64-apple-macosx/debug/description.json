@@ -1,0 +1,602 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.xctest/Contents/MacOS/PortGuardCorePackageTests",
+      "packagePath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore",
+      "productName" : "PortGuardCorePackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.PortGuardCore-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/sources",
+      "importPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/Sources/PortGuardCore/Models.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "PortGuardCore",
+      "moduleOutputPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules/PortGuardCore.swiftmodule",
+      "objects" : [
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/Models.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/include/PortGuardCore-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "portguardcore"
+      ],
+      "outputFileMapPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules/PortGuardCore.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/Sources/PortGuardCore/Models.swift"
+      ],
+      "tempsPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.PortGuardCorePackageTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build/sources",
+      "importPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules/PortGuardCoreTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "PortGuardCorePackageTests",
+      "moduleOutputPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules/PortGuardCorePackageTests.swiftmodule",
+      "objects" : [
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build/include/PortGuardCorePackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "portguardcore"
+      ],
+      "outputFileMapPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules/PortGuardCorePackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.PortGuardCoreTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/sources",
+      "importPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/Tests/PortGuardCoreTests/ModelsTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules/PortGuardCore.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "PortGuardCoreTests",
+      "moduleOutputPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules/PortGuardCoreTests.swiftmodule",
+      "objects" : [
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/ModelsTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "portguardcore"
+      ],
+      "outputFileMapPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/ModelsTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules/PortGuardCoreTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/Tests/PortGuardCoreTests/ModelsTests.swift"
+      ],
+      "tempsPath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "PortGuardCore" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "PortGuardCore",
+      "-package-name",
+      "portguardcore",
+      "-c",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/Sources/PortGuardCore/Models.swift",
+      "-I",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/include/PortGuardCore-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "portguardcore",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "PortGuardCorePackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "PortGuardCorePackageTests",
+      "-package-name",
+      "portguardcore",
+      "-c",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.derived/runner.swift",
+      "-I",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build/include/PortGuardCorePackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "portguardcore",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "PortGuardCoreTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "PortGuardCoreTests",
+      "-package-name",
+      "portguardcore",
+      "-c",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/Tests/PortGuardCoreTests/ModelsTests.swift",
+      "-I",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "portguardcore",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "PortGuardCore" : [
+
+    ],
+    "PortGuardCorePackageTests" : [
+      "PortGuardCoreTests",
+      "PortGuardCore"
+    ],
+    "PortGuardCoreTests" : [
+      "PortGuardCore"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/Sources/PortGuardCore/Models.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/sources"
+    },
+    "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build/sources"
+    },
+    "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCore.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/ModelsTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCorePackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/Tests/PortGuardCoreTests/ModelsTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/PortGuardCoreTests.build/sources"
+    },
+    "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/lorenzov/mobile_app_ideas/PortGuard/PortGuardCore/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}
