@@ -25,18 +25,44 @@ final class MenuBarManager {
 
         if let button = statusItem.button {
             button.image = NSImage(systemSymbolName: "network", accessibilityDescription: "PortGuard")
-            button.action = #selector(togglePopover)
+            button.action = #selector(handleClick)
+            button.sendAction(on: [.leftMouseUp, .rightMouseUp])
             button.target = self
         }
     }
 
-    @objc private func togglePopover() {
+    @objc private func handleClick() {
+        guard let event = NSApp.currentEvent else { return }
+        if event.type == .rightMouseUp {
+            showContextMenu()
+        } else {
+            togglePopover()
+        }
+    }
+
+    private func togglePopover() {
         guard let button = statusItem.button else { return }
         if popover.isShown {
             popover.performClose(nil)
         } else {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
         }
+    }
+
+    private func showContextMenu() {
+        let menu = NSMenu()
+        menu.addItem(withTitle: "Settings…", action: #selector(openSettings), keyEquivalent: ",")
+            .target = self
+        menu.addItem(.separator())
+        menu.addItem(withTitle: "Quit PortGuard", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        statusItem.menu = menu
+        statusItem.button?.performClick(nil)
+        statusItem.menu = nil
+    }
+
+    @objc private func openSettings() {
+        NSApp.activate(ignoringOtherApps: true)
+        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
     }
 
     func updateBadge(connectionCount: Int, hasActiveAlert: Bool) {
