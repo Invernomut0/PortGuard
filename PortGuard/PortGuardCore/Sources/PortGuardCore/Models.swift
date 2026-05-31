@@ -6,7 +6,7 @@ public enum ConnectionState: String, Codable, Hashable {
     case established = "ESTABLISHED"
     case closeWait = "CLOSE_WAIT"
     case timeWait = "TIME_WAIT"
-    case unknown
+    case unknown = "UNKNOWN"
 }
 
 public enum ConnectionProtocol: String, Codable, Hashable {
@@ -51,6 +51,16 @@ public struct ConnectionRecord: Equatable, Hashable, Codable, Identifiable {
         lhs.state == rhs.state &&
         lhs.protocol == rhs.protocol
     }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(pid)
+        hasher.combine(processName)
+        hasher.combine(localPort)
+        hasher.combine(remoteHost)
+        hasher.combine(remotePort)
+        hasher.combine(state)
+        hasher.combine(`protocol`)
+    }
 }
 
 public struct PortRecord: Equatable, Hashable, Codable, Identifiable {
@@ -62,13 +72,29 @@ public struct PortRecord: Equatable, Hashable, Codable, Identifiable {
     public let isSigned: Bool
 
     public init(port: Int, protocol proto: ConnectionProtocol, pid: Int,
-                processName: String, isSigned: Bool = true) {
+                processName: String, isSigned: Bool = false) {
         self.id = UUID()
         self.port = port
         self.protocol = proto
         self.pid = pid
         self.processName = processName
         self.isSigned = isSigned
+    }
+
+    public static func == (lhs: PortRecord, rhs: PortRecord) -> Bool {
+        lhs.port == rhs.port &&
+        lhs.protocol == rhs.protocol &&
+        lhs.pid == rhs.pid &&
+        lhs.processName == rhs.processName &&
+        lhs.isSigned == rhs.isSigned
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(port)
+        hasher.combine(`protocol`)
+        hasher.combine(pid)
+        hasher.combine(processName)
+        hasher.combine(isSigned)
     }
 }
 
@@ -99,7 +125,7 @@ public struct LsofDiff: Equatable {
     }
 }
 
-public struct AlertRule: Codable, Identifiable {
+public struct AlertRule: Equatable, Hashable, Codable, Identifiable {
     public enum Trigger: String, Codable {
         case portOpened, portClosed, newOutboundConnection, processConnected
     }
@@ -118,5 +144,21 @@ public struct AlertRule: Codable, Identifiable {
         self.portFilter = portFilter
         self.processFilter = processFilter
         self.isEnabled = isEnabled
+    }
+
+    public static func == (lhs: AlertRule, rhs: AlertRule) -> Bool {
+        lhs.name == rhs.name &&
+        lhs.trigger == rhs.trigger &&
+        lhs.portFilter == rhs.portFilter &&
+        lhs.processFilter == rhs.processFilter &&
+        lhs.isEnabled == rhs.isEnabled
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(trigger)
+        hasher.combine(portFilter)
+        hasher.combine(processFilter)
+        hasher.combine(isEnabled)
     }
 }
