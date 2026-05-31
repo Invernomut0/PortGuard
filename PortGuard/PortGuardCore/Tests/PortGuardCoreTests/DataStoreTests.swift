@@ -4,7 +4,7 @@ import XCTest
 
 @MainActor
 final class DataStoreTests: XCTestCase {
-    func test_applyDiff_addsConnections() async {
+    func test_applyDiff_addsConnections() {
         let store = DataStore()
         let record = ConnectionRecord(pid: 1, processName: "test", localPort: 8080,
                                       remoteHost: nil, remotePort: nil,
@@ -15,7 +15,7 @@ final class DataStoreTests: XCTestCase {
         XCTAssertEqual(store.listenPorts.count, 1)
     }
 
-    func test_applyDiff_removesConnections() async {
+    func test_applyDiff_removesConnections() {
         let store = DataStore()
         let record = ConnectionRecord(pid: 1, processName: "test", localPort: 8080,
                                       remoteHost: nil, remotePort: nil,
@@ -25,7 +25,7 @@ final class DataStoreTests: XCTestCase {
         XCTAssertTrue(store.connections.isEmpty)
     }
 
-    func test_filtered_bySearchQuery() async {
+    func test_filtered_bySearchQuery() {
         let store = DataStore()
         let nodeRecord = ConnectionRecord(pid: 1, processName: "node", localPort: 3000,
                                           remoteHost: nil, remotePort: nil,
@@ -37,5 +37,18 @@ final class DataStoreTests: XCTestCase {
         store.searchQuery = "node"
         XCTAssertEqual(store.filteredConnections.count, 1)
         XCTAssertEqual(store.filteredConnections.first?.processName, "node")
+    }
+
+    func test_outboundConnections_filtersEstablishedWithRemoteHost() {
+        let store = DataStore()
+        let listenRecord = ConnectionRecord(pid: 1, processName: "node", localPort: 3000,
+                                            remoteHost: nil, remotePort: nil,
+                                            state: .listen, protocol: .tcp)
+        let outboundRecord = ConnectionRecord(pid: 2, processName: "curl", localPort: 52000,
+                                              remoteHost: "93.184.216.34", remotePort: 443,
+                                              state: .established, protocol: .tcp)
+        store.apply(diff: LsofDiff(added: [listenRecord, outboundRecord], removed: [], unchanged: []))
+        XCTAssertEqual(store.outboundConnections.count, 1)
+        XCTAssertEqual(store.outboundConnections.first?.processName, "curl")
     }
 }

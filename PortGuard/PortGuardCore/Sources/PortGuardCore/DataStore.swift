@@ -36,13 +36,14 @@ public final class DataStore {
         let groups = Dictionary(grouping: filteredConnections, by: { $0.pid })
         return groups.map { pid, conns in
             ProcessSummary(pid: pid, name: conns.first?.processName ?? "", connections: conns)
-        }.sorted { $0.name < $1.name }
+        }.sorted { ($0.name, $0.pid) < ($1.name, $1.pid) }
     }
 
     public func apply(diff: LsofDiff) {
         let removedSet = Set(diff.removed)
         connections.removeAll { removedSet.contains($0) }
-        connections.append(contentsOf: diff.added)
+        let existingSet = Set(connections)
+        connections.append(contentsOf: diff.added.filter { !existingSet.contains($0) })
         rebuildListenPorts()
     }
 
