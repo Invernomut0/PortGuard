@@ -8,7 +8,7 @@ final class LicenseManager {
     private(set) var activationError: String? = nil
     var isValidating: Bool = false
 
-    private let gumroadProductPermalink = "portguard" // ← sostituisci con il tuo permalink reale
+    private let gumroadProductID = "UT1aOLE0DRcVIQ-WWWKfrg=="
     private let keychainKey = "com.portguard.app.licenseKey"
 
     init() {
@@ -33,7 +33,7 @@ final class LicenseManager {
         var request = URLRequest(url: URL(string: "https://api.gumroad.com/v2/licenses/verify")!)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpBody = "product_permalink=\(gumroadProductPermalink)&license_key=\(trimmed)".data(using: .utf8)
+        request.httpBody = "product_id=\(gumroadProductID)&license_key=\(trimmed)&increment_uses_count=false".data(using: .utf8)
 
         do {
             let (data, _) = try await URLSession.shared.data(for: request)
