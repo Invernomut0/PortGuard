@@ -55,7 +55,7 @@ Click the **network icon** in your menu bar to open the popover.
 
 **One-time purchase · Perpetual license · No subscription**
 
-[Buy on Gumroad →](https://invernomuto.gumroad.com/l/portguard)
+[Buy on Gumroad →](https://invernomuto2.gumroad.com/l/gbulks)
 
 ### Kill process
 
