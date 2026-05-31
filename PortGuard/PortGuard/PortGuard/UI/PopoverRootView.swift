@@ -3,7 +3,11 @@ import PortGuardCore
 
 struct PopoverRootView: View {
     @Environment(DataStore.self) var dataStore
+    @State var licenseManager: LicenseManager
+    @State var exportManager: ExportManager
+    @State var alertEngine: AlertEngine
     @State private var selectedTab: Tab = .processes
+    @State private var showingAlertRules = false
 
     enum Tab: String, CaseIterable {
         case processes = "Processes"
@@ -57,8 +61,35 @@ struct PopoverRootView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 Spacer()
-                Button("⚙") {
+                if licenseManager.isPro {
+                    Button {
+                        showingAlertRules = true
+                    } label: {
+                        Image(systemName: "bell")
+                    }
+                    .buttonStyle(.plain)
+                    .help("Alert Rules")
+                    .sheet(isPresented: $showingAlertRules) {
+                        AlertRuleBuilderView(alertEngine: alertEngine)
+                    }
+
+                    Menu {
+                        Button("Export as CSV") {
+                            exportManager.export(connections: dataStore.connections, format: .csv)
+                        }
+                        Button("Export as JSON") {
+                            exportManager.export(connections: dataStore.connections, format: .json)
+                        }
+                    } label: {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                    .buttonStyle(.plain)
+                    .help("Export")
+                }
+                Button {
                     NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                } label: {
+                    Image(systemName: "gearshape")
                 }
                 .buttonStyle(.plain)
             }

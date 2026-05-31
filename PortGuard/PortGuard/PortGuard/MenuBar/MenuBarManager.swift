@@ -8,14 +8,19 @@ final class MenuBarManager {
     private let popover: NSPopover
     private let dataStore: DataStore
 
-    init(dataStore: DataStore) {
+    init(dataStore: DataStore, licenseManager: LicenseManager, alertEngine: AlertEngine, exportManager: ExportManager) {
         self.dataStore = dataStore
         self.statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         self.popover = NSPopover()
         popover.contentSize = NSSize(width: 400, height: 520)
         popover.behavior = .transient
         popover.contentViewController = NSHostingController(
-            rootView: PopoverRootView().environment(dataStore)
+            rootView: PopoverRootView(
+                licenseManager: licenseManager,
+                exportManager: exportManager,
+                alertEngine: alertEngine
+            )
+            .environment(dataStore)
         )
 
         if let button = statusItem.button {

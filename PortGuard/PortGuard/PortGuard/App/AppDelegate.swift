@@ -6,6 +6,8 @@ import Carbon
 final class AppDelegate: NSObject, NSApplicationDelegate {
     let dataStore = DataStore()
     let licenseManager = LicenseManager()
+    let alertEngine = AlertEngine()
+    let exportManager = ExportManager()
     private let poller = LsofPoller()
     private let processMonitor = ProcessMonitor()
     private var menuBarManager: MenuBarManager?
@@ -14,10 +16,20 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var hotKeyRef: EventHotKeyRef?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        menuBarManager = MenuBarManager(dataStore: dataStore)
+        menuBarManager = MenuBarManager(
+            dataStore: dataStore,
+            licenseManager: licenseManager,
+            alertEngine: alertEngine,
+            exportManager: exportManager
+        )
 
         poller.onDiff = { [weak self] diff in
-            Task { @MainActor in self?.dataStore.apply(diff: diff) }
+            Task { @MainActor in
+                self?.dataStore.apply(diff: diff)
+                if self?.licenseManager.isPro == true {
+                    self?.alertEngine.evaluate(diff: diff)
+                }
+            }
         }
         processMonitor.onLaunch = { _ in }
         processMonitor.onTerminate = { _ in }
