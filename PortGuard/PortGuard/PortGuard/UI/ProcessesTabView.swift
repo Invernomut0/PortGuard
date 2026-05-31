@@ -25,6 +25,7 @@ struct ProcessRowView: View {
     let onTap: () -> Void
 
     @State private var showingKillConfirm = false
+    @State private var showingSniffer = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -46,6 +47,21 @@ struct ProcessRowView: View {
                         .padding(.vertical, 2)
                         .background(.blue, in: Capsule())
                     if isPro {
+                        Button {
+                            showingSniffer = true
+                        } label: {
+                            Image(systemName: "antenna.radiowaves.left.and.right")
+                                .foregroundStyle(.purple.opacity(0.8))
+                        }
+                        .buttonStyle(.plain)
+                        .help("Sniff traffico")
+                        .sheet(isPresented: $showingSniffer) {
+                            SnifferView(
+                                processName: summary.name,
+                                ports: summary.connections.map(\.localPort)
+                            )
+                        }
+
                         Button {
                             showingKillConfirm = true
                         } label: {
