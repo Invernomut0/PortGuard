@@ -105,6 +105,7 @@ public final class LsofPoller {
     public init() {}
 
     public func start() {
+        poll()
         scheduleTimer()
     }
 
