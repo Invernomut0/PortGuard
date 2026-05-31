@@ -7,15 +7,7 @@ struct PortGuardApp: App {
 
     var body: some Scene {
         Settings {
-            SettingsPlaceholderView()
+            SettingsView(licenseManager: appDelegate.licenseManager)
         }
-    }
-}
-
-// Placeholder until SettingsView is implemented in Task 9
-struct SettingsPlaceholderView: View {
-    var body: some View {
-        Text("Settings coming soon")
-            .frame(width: 400, height: 300)
     }
 }
