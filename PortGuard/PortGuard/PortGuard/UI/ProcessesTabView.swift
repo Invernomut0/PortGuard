@@ -3,16 +3,13 @@ import PortGuardCore
 
 struct ProcessesTabView: View {
     @Environment(DataStore.self) var dataStore
+    @Environment(\.isPro) var isPro
     @State private var expandedPID: Int?
 
     var body: some View {
         List {
             ForEach(dataStore.processSummaries) { summary in
-                ProcessRowView(
-                    summary: summary,
-                    isExpanded: expandedPID == summary.pid,
-                    isPro: dataStore.showAllPorts
-                ) {
+                ProcessRowView(summary: summary, isExpanded: expandedPID == summary.pid, isPro: isPro) {
                     expandedPID = expandedPID == summary.pid ? nil : summary.pid
                 }
             }
@@ -63,7 +60,7 @@ struct ProcessRowView: View {
                             titleVisibility: .visible
                         ) {
                             Button("Termina", role: .destructive) {
-                                kill(pid: summary.pid)
+                                Foundation.kill(pid_t(summary.pid), SIGTERM)
                             }
                         } message: {
                             Text("Il processo verrà chiuso immediatamente.")
@@ -83,10 +80,6 @@ struct ProcessRowView: View {
                 }
             }
         }
-    }
-
-    private func kill(pid: Int) {
-        Foundation.kill(pid_t(pid), SIGTERM)
     }
 }
 

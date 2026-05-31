@@ -3,30 +3,11 @@ import PortGuardCore
 
 struct PortsTabView: View {
     @Environment(DataStore.self) var dataStore
+    @Environment(\.isPro) var isPro
 
     var body: some View {
-        List {
-            ForEach(dataStore.filteredListenPorts) { port in
-                PortRowView(port: port, isPro: dataStore.showAllPorts)
-            }
-
-            if dataStore.hiddenHighPortsCount > 0 {
-                HStack(spacing: 8) {
-                    Image(systemName: "lock.fill")
-                        .foregroundStyle(.secondary)
-                    Text("\(dataStore.hiddenHighPortsCount) porte >1024 nascoste")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                    Text("Pro")
-                        .font(.caption2.bold())
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 6)
-                        .padding(.vertical, 2)
-                        .background(.orange, in: Capsule())
-                }
-                .listRowBackground(Color.orange.opacity(0.08))
-            }
+        List(dataStore.filteredListenPorts) { port in
+            PortRowView(port: port, isPro: isPro)
         }
         .listStyle(.plain)
     }

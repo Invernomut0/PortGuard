@@ -3,6 +3,7 @@ import PortGuardCore
 
 struct PopoverRootView: View {
     @Environment(DataStore.self) var dataStore
+    @Environment(\.openSettings) private var openSettings
     @State var licenseManager: LicenseManager
     @State var exportManager: ExportManager
     @State var alertEngine: AlertEngine
@@ -52,6 +53,7 @@ struct PopoverRootView: View {
                 case .connections: ConnectionsTabView()
                 }
             }
+            .environment(\.isPro, licenseManager.isPro)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             Divider()
@@ -86,16 +88,17 @@ struct PopoverRootView: View {
                     .buttonStyle(.plain)
                     .help("Export")
                 }
-                SettingsLink {
+                Button {
+                    openSettings()
+                } label: {
                     Image(systemName: "gearshape")
                 }
                 .buttonStyle(.plain)
+                .help("Settings")
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 8)
         }
         .frame(width: 400, height: 520)
-        .task { dataStore.showAllPorts = licenseManager.isPro }
-        .onChange(of: licenseManager.isPro) { dataStore.showAllPorts = licenseManager.isPro }
     }
 }
